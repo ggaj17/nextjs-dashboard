@@ -31,6 +31,7 @@ export default async function CustomersTable({
                       <div>
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
+                            {/* Componente de imagem do NextJS que vem com otimização automática e responsividade */}
                             <Image
                               src={customer.image_url}
                               className="rounded-full"
