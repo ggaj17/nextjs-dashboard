@@ -1,4 +1,4 @@
-'use client';
+'use client'; // É chamado sempre que houver um comportamento do lado do cliente como um formulario, mudança de estado e etc. Não apenas quando usa um hook necessariamente.
 
 import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
 import {
