@@ -1,4 +1,4 @@
-//Arquivo dedicado para os erros capturados no try catch. Ele precisa ser um componente client. Ele aceita duas props: error (instancia nativa do Error do JS) e reset (tenta re-renderizar a rota).
+//Arquivo dedicado para os erros capturados no try catch. Ele precisa ser um componente client. Ele aceita duas props: error (instancia nativa do Error do JS) e reset (tenta re-renderizar a rota). Qualquer erro no invoice vai chamar este componente.
 'use client';
  
 import { useEffect } from 'react';
