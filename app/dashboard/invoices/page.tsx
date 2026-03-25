@@ -6,6 +6,12 @@ import { lusitana } from '@/app/ui/fonts';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
+import { Metadata } from 'next';
+ 
+//Meta dados personalizado para mostrar o modulo de invoices
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
  
 // o componente Page aceita a props searchParams, podendo passar a URL atual para o componente Table
 // Dessa forma, deu para perceber que existe o searchParams props e o hook. O hook é para ser usado quando for 'use client' e a props é para server components como é o caso do componente Table

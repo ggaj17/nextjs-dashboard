@@ -1,5 +1,4 @@
 'use client'; // É chamado sempre que houver um comportamento do lado do cliente como um formulario, mudança de estado e etc. Não apenas quando usa um hook necessariamente.
-
 import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
 import {
   CheckIcon,
@@ -9,7 +8,8 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
-import { updateInvoice } from '@/app/lib/actions';
+import { updateInvoice, State } from '@/app/lib/actions';
+import { useActionState } from 'react';
 
 export default function EditInvoiceForm({
   invoice,
@@ -19,10 +19,12 @@ export default function EditInvoiceForm({
   customers: CustomerField[];
 }) {
   //o ideal para editar itens é passando o id através do bind.
+  const initialState: State = { message: null, errors: {} };
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+  const [state, formAction] = useActionState(updateInvoiceWithId, initialState);
  
-  return (
-    <form action={updateInvoiceWithId}>
+  return ( 
+    <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
