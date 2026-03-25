@@ -15,6 +15,8 @@ import { createInvoice, State } from '@/app/lib/actions';
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(createInvoice, initialState);
+  //hook para formularios que enviam dados para APIs ou DB, facilitando e agilizando o processo
+  //Ele unifica em uma única chamada o que antes exigia vários useState para controlar o estado do dado, o carregamento (loading) e o erro, oferecendo uma API mais limpa e eficiente
  
   return (
     <form action={formAction}>
